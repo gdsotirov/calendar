@@ -31,25 +31,25 @@ function inttostr(i : longint): string;
 
 implementation
 
-{ Transforms an integer to a string.				}
-{  Input  : a longint value					}
-{  Output : a string representig the inputed value		}
+{ Transforms an integer to a string.                }
+{  Input  : a longint value                         }
+{  Output : a string representig the inputed value  }
 function inttostr(i : longint): string;
 var
-	s : string[11];
+  s : string[11];
 begin
-	str(i, s);
-	inttostr := s;
+  str(i, s);
+  inttostr := s;
 end;
 
-{ Finds if the given year is a leap year			}
-{  Input  : the year in range 1583 - 4903			}
-{  Output : true - if the given year is leap, else false	}
+{ Finds if the given year is a leap year                  }
+{  Input  : the year in range 1583 - 4903                 }
+{  Output : true - if the given year is leap, else false  }
 function leapyear(year : yearT): boolean;
 begin
-	leapyear := ((year mod 4) = 0) and
-		((year mod 100) > 0) or
-		((year mod 400) = 0)
+  leapyear := ((year mod 4) = 0) and
+              ((year mod 100) > 0) or
+              ((year mod 400) = 0)
 end;
 
 function day_of_week1(d, m, y : word): byte;
@@ -74,7 +74,7 @@ begin
 end;
 
 function day_of_week2(d, m, y : word): byte;
-{ Същата като предходната, но с различен алгоритъм                      }
+{ Същата като предходната, но с различен алгоритъм  }
 begin
   if m < 3 then
     begin
@@ -85,24 +85,24 @@ begin
   day_of_week2 := d mod 7;
 end;
 
-{ Gives the days in the month for a given year			}
-{  Input  : the month and the year				}
-{  Output : number of days for the month			}
+{ Gives the days in the month for a given year  }
+{  Input  : the month and the year              }
+{  Output : number of days for the month        }
 function days_in_month(month : byte; year : yearT): byte;
 begin
-	case month of
-		1,3,5,7,8,10,12 : days_in_month := 31;
-		4,6,9,11        : days_in_month := 30;
-		2               : if leapyear(year) then days_in_month := 29
-				else days_in_month := 28;
-	end;
+  case month of
+    1,3,5,7,8,10,12 : days_in_month := 31;
+    4,6,9,11        : days_in_month := 30;
+    2               : if leapyear(year) then days_in_month := 29
+                      else days_in_month := 28;
+  end;
 end;
 
 function day_of_year(d, m, y : word): word;
-{ Функция, която намира номера на деня в годината по зададена дата      }
-{  вход  : ден, месец, година                                           }
-{  изход : цяло число даващо номера на зададения календарен ден         }
-{          в годината                                                   }
+{ Функция, която намира номера на деня в годината по зададена дата  }
+{  вход  : ден, месец, година                                       }
+{  изход : цяло число даващо номера на зададения календарен ден     }
+{          в годината                                               }
 var
   den : real;
 begin
@@ -112,10 +112,10 @@ begin
 end;
 
 function easterday(y: yearT):string;
-{ Функция, която намира дата на Великден за дадена година. Функцията    }
-{ реализира алгоритъма на Гаус.                                         }
-{  вход  : годината, която се проверява                                 }
-{  изход : низ, представящ датата на Великден за проверяваната година   }
+{ Функция, която намира дата на Великден за дадена година. Функцията  }
+{ реализира алгоритъма на Гаус.                                       }
+{  вход  : годината, която се проверява                               }
+{  изход : низ, представящ датата на Великден за проверяваната година }
 var
   n1, n2, n3, n4, n5, na, nb, nc, vel : integer;
 begin
