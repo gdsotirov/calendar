@@ -244,9 +244,9 @@ begin
             gotoxy(15,11); writeln('│            Георги Димитров Сотиров           │');
             gotoxy(15,12); writeln('│----------------------------------------------│');
             gotoxy(15,13); writeln('│ Тел.   : +359 88 371 817                     │');
-            gotoxy(15,14); writeln('│ Е-поща : sotirov@bitex.com                   │');
-            gotoxy(15,15); writeln('│ WWW    : http://web.orbitel.bg/sotirov       │');
-            gotoxy(15,16); writeln('│ FTP    : ftp://free.techno-link.com/astronom │');
+            gotoxy(15,14); writeln('│ Е-поща : astronom@dir.bg                     │');
+            gotoxy(15,15); writeln('│ WWW    : http://gsotirov79.ddns.homelan.bg   │');
+            gotoxy(15,16); writeln('│ FTP    : ftp://gsotirov79.ddns.homelan.bg    │');
             gotoxy(15,17); writeln('└──────────────────────────────────────────────┘');
             gotoxy(21,20); textcolor(red);
             write('Произвлен клавиш за връщане в гл. меню ... ');
