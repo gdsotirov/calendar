@@ -2,11 +2,11 @@
  |               ~  C   A   L   E   N   D   A  R    1.0  ~               |
  |               Author (c) 2000  George Dimitrov Sotirov                |
  +-----------------------------------------------------------------------+
- | °®£° ¬ ²  °¥ «¨§¨°  ª «¥­¤ ° §  ¢±¿ª  £®¤¨­  ¢ ¨­²¥°¢ «  1582 - 4903 |
- | (ƒ°¥£®°¨ ­±ª¨ ª «¥­¤ °). ˆ¬  ¢º§¬®¦­®±²¨ §  ¨§¢¥¦¤ ­¥ ­  ¢±¥ª¨ ¬¥±¥¶  |
- | ¯®®²¤¥«­®, ¯°®¢¥°ª  §  ¢¨±®ª®±­  £®¤¨­ , ¤ ²  ­  ‚¥«¨ª¤¥­ ¨ ¤°.       |
+ | ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð°Ñ‚Ð° Ñ€ÐµÐ°Ð»Ð¸Ð·Ð¸Ñ€Ð° ÐºÐ°Ð»ÐµÐ½Ð´Ð°Ñ€ Ð·Ð° Ð²ÑÑÐºÐ° Ð³Ð¾Ð´Ð¸Ð½Ð° Ð² Ð¸Ð½Ñ‚ÐµÑ€Ð²Ð°Ð»Ð° 1582 - 4903 |
+ | (Ð“Ñ€ÐµÐ³Ð¾Ñ€Ð¸Ð°Ð½ÑÐºÐ¸ ÐºÐ°Ð»ÐµÐ½Ð´Ð°Ñ€). Ð˜Ð¼Ð° Ð²ÑŠÐ·Ð¼Ð¾Ð¶Ð½Ð¾ÑÑ‚Ð¸ Ð·Ð° Ð¸Ð·Ð²ÐµÐ¶Ð´Ð°Ð½Ðµ Ð½Ð° Ð²ÑÐµÐºÐ¸ Ð¼ÐµÑÐµÑ†  |
+ | Ð¿Ð¾Ð¾Ñ‚Ð´ÐµÐ»Ð½Ð¾, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð·Ð° Ð²Ð¸ÑÐ¾ÐºÐ¾ÑÐ½Ð° Ð³Ð¾Ð´Ð¸Ð½Ð°, Ð´Ð°Ñ‚Ð° Ð½Ð° Ð’ÐµÐ»Ð¸ÐºÐ´ÐµÐ½ Ð¸ Ð´Ñ€.       |
  +-----------------------------------------------------------------------+
- | ¥ «¨§ ¶¨¿ : 27. ¬ ©. 2000 £., ±º¡®²                                  |
+ | Ð ÐµÐ°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ : 27. Ð¼Ð°Ð¹. 2000 Ð³., ÑÑŠÐ±Ð¾Ñ‚Ð°                                 |
  +-----------------------------------------------------------------------+}
 
 program Kalendar;
@@ -15,9 +15,9 @@ uses
 	crt, dos, gregor;
 
 const
-	mesi : array [1..12] of string[10] = ('Ÿ­³ °¨','”¥¢°³ °¨','Œ °²','€¯°¨«',
-					'Œ ©','ž­¨','ž«¨','€¢£³±²','‘¥¯²¥¬¢°¨',
-					'Žª²®¬¢°¨','®¥¬¢°¨','„¥ª¥¬¢°¨');
+	mesi : array [1..12] of string[20] = ('Ð¯Ð½ÑƒÐ°Ñ€Ð¸','Ð¤ÐµÐ²Ñ€ÑƒÐ°Ñ€Ð¸','ÐœÐ°Ñ€Ñ‚','ÐÐ¿Ñ€Ð¸Ð»',
+					'ÐœÐ°Ð¹','Ð®Ð½Ð¸','Ð®Ð»Ð¸','ÐÐ²Ð³ÑƒÑÑ‚','Ð¡ÐµÐ¿Ñ‚ÐµÐ¼Ð²Ñ€Ð¸',
+					'ÐžÐºÑ‚Ð¾Ð¼Ð²Ñ€Ð¸','ÐÐ¾ÐµÐ¼Ð²Ñ€Ð¸','Ð”ÐµÐºÐµÐ¼Ð²Ñ€Ð¸');
 
 type
   masiv = array [0..37] of string[2];
@@ -30,97 +30,97 @@ var
 	i : integer;
 
 procedure logo;
-{ ¨§¢¥¦¤  ­ · «¥­ ¥ª° ­ }
+{ Ð¸Ð·Ð²ÐµÐ¶Ð´Ð° Ð½Ð°Ñ‡Ð°Ð»ÐµÐ½ ÐµÐºÑ€Ð°Ð½ }
 begin
 	clrscr;
-	gotoxy(20,6);  writeln('ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ×');
-	gotoxy(20,7);  writeln('Ç            ƒ…ƒŽˆ€‘Šˆ              Ç');
-	gotoxy(20,8);  writeln('Ç     Š  €  ‹  …    „  €     1.0     Ç');
-	gotoxy(20,9);  writeln('ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÆ');
-	gotoxy(20,10); writeln('Ç     <*    1583 ö 4903 £®¤.    *>     Ç');
-	gotoxy(20,11); writeln('ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÆ');
-	gotoxy(20,12); writeln('Ç  €¢²®° 2000 ƒ¥®°£¨ „¨¬¨²°®¢ ‘®²¨°®¢  Ç');
-	gotoxy(20,13); writeln('ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍØ');
+	gotoxy(20,6);  writeln('â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—');
+	gotoxy(20,7);  writeln('â•‘            Ð“Ð Ð•Ð“ÐžÐ Ð˜ÐÐÐ¡ÐšÐ˜              â•‘');
+	gotoxy(20,8);  writeln('â•‘     Ðš  Ð  Ð›  Ð•  Ð  Ð”  Ð  Ð    1.0     â•‘');
+	gotoxy(20,9);  writeln('â• â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•£');
+	gotoxy(20,10); writeln('â•‘     <*    1583 Ã· 4903 Ð³Ð¾Ð´.    *>     â•‘');
+	gotoxy(20,11); writeln('â• â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•£');
+	gotoxy(20,12); writeln('â•‘  ÐÐ²Ñ‚Ð¾Ñ€ 2000 Ð“ÐµÐ¾Ñ€Ð³Ð¸ Ð”Ð¸Ð¼Ð¸Ñ‚Ñ€Ð¾Ð² Ð¡Ð¾Ñ‚Ð¸Ñ€Ð¾Ð²  â•‘');
+	gotoxy(20,13); writeln('â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
 	delay(3000);
 	normvideo;
 	gotoxy(80,25); writeln('');
 end; { logo }
 
 function menu: integer;
-{ ¯®ª §¢  ¬¥­¾²® ­  ¯°®£° ¬ ² 	}
-{ ¢µ®¤  : ­¿¬ 					}
-{ ¨§µ®¤ : ¨§¡®°º² ­  ¯®²°¥¡¨²¥«¿}
+{ Ð¿Ð¾ÐºÐ°Ð·Ð²Ð° Ð¼ÐµÐ½ÑŽÑ‚Ð¾ Ð½Ð° Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð°Ñ‚Ð°	}
+{ Ð²Ñ…Ð¾Ð´  : Ð½ÑÐ¼Ð°					}
+{ Ð¸Ð·Ñ…Ð¾Ð´ : Ð¸Ð·Ð±Ð¾Ñ€ÑŠÑ‚ Ð½Ð° Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð¸Ñ‚ÐµÐ»Ñ}
 begin
 	clrscr;
-	gotoxy(20, 6); writeln('ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÏ');
-	gotoxy(20, 7); writeln('Ó          Š  €  ‹  …    „  €            Ó');
-	gotoxy(20, 8); writeln('ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÔ');
-	gotoxy(20, 9); writeln('Ó  1  - £®¤¨­  ... (²¥ª³¹  : ',godina,')         Ó');
-	gotoxy(20,10); writeln('Ó  2  - ¯®±«¥¤®¢ ²¥«­® ¨§¢¥¦¤ ­¥ ¯® ¬¥±¥¶¨ Ó');
-	gotoxy(20,11); writeln('Ó  3  - ®² ... ¤® ... ¬¥±¥¶                Ó');
-	gotoxy(20,12); writeln('Ó  4  - ¯°®¢¥°ª  §  ¢¨±®ª®±­  £®¤¨­        Ó');
-	gotoxy(20,13); writeln('Ó  5  - ¯°®¢¥°ª  §  ¤¥­ ®² ±¥¤¬¨¶ ²        Ó');
-	gotoxy(20,14); writeln('Ó  6  - ¤ ²  ­  ‚¥«¨ª¤¥­ ¯°¥§ ',godina,' £.      Ó');
-	gotoxy(20,15); writeln('Ó  7  - ¨­´®°¬ ¶¨¿ §   ¢²®°                Ó');
-	gotoxy(20,16); writeln('Ó Esc - ¨§µ®¤ ®² ¯°®£°a¬ ²                 Ó');
-	gotoxy(20,17); writeln('ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ');
+	gotoxy(20, 6); writeln('â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”');
+	gotoxy(20, 7); writeln('â”‚          Ðš  Ð  Ð›  Ð•  Ð  Ð”  Ð  Ð           â”‚');
+	gotoxy(20, 8); writeln('â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤');
+	gotoxy(20, 9); writeln('â”‚  1  - Ð³Ð¾Ð´Ð¸Ð½Ð° ... (Ñ‚ÐµÐºÑƒÑ‰Ð° : ',godina,')         â”‚');
+	gotoxy(20,10); writeln('â”‚  2  - Ð¿Ð¾ÑÐ»ÐµÐ´Ð¾Ð²Ð°Ñ‚ÐµÐ»Ð½Ð¾ Ð¸Ð·Ð²ÐµÐ¶Ð´Ð°Ð½Ðµ Ð¿Ð¾ Ð¼ÐµÑÐµÑ†Ð¸ â”‚');
+	gotoxy(20,11); writeln('â”‚  3  - Ð¾Ñ‚ ... Ð´Ð¾ ... Ð¼ÐµÑÐµÑ†                â”‚');
+	gotoxy(20,12); writeln('â”‚  4  - Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð·Ð° Ð²Ð¸ÑÐ¾ÐºÐ¾ÑÐ½Ð° Ð³Ð¾Ð´Ð¸Ð½Ð°       â”‚');
+	gotoxy(20,13); writeln('â”‚  5  - Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð·Ð° Ð´ÐµÐ½ Ð¾Ñ‚ ÑÐµÐ´Ð¼Ð¸Ñ†Ð°Ñ‚Ð°       â”‚');
+	gotoxy(20,14); writeln('â”‚  6  - Ð´Ð°Ñ‚Ð° Ð½Ð° Ð’ÐµÐ»Ð¸ÐºÐ´ÐµÐ½ Ð¿Ñ€ÐµÐ· ',godina,' Ð³.      â”‚');
+	gotoxy(20,15); writeln('â”‚  7  - Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð·Ð° Ð°Ð²Ñ‚Ð¾Ñ€Ð°               â”‚');
+	gotoxy(20,16); writeln('â”‚ Esc - Ð¸Ð·Ñ…Ð¾Ð´ Ð¾Ñ‚ Ð¿Ñ€Ð¾Ð³Ñ€aÐ¼Ð°Ñ‚Ð°                â”‚');
+	gotoxy(20,17); writeln('â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜');
 	menu := ord(readkey);
 end; { menu }
 
 procedure ceti_god;
-{ ¯°®·¨²  £®¤¨­ ²  ¢º¢¥¤¥­  ®² ¯®²°¥¡¨²¥«¿	}
+{ Ð¿Ñ€Ð¾Ñ‡Ð¸Ñ‚Ð° Ð³Ð¾Ð´Ð¸Ð½Ð°Ñ‚Ð° Ð²ÑŠÐ²ÐµÐ´ÐµÐ½Ð° Ð¾Ñ‚ Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð¸Ñ‚ÐµÐ»Ñ	}
 begin
 	clrscr;
 	repeat
 		gotoxy(25,13);
-		write('ƒ®¤¨­  [1583 .. 4903] : '); clreol;
+		write('Ð“Ð¾Ð´Ð¸Ð½Ð° [1583 .. 4903] : '); clreol;
 		readln(godina);
 	until (godina >= 1583) and (godina <= 4903);
 end; { ceti_god }
 
 function dob(niz : string): string;
-{ ¤®¡ ¢¿ ±¨¬¢®«¨ ªº¬ ­¨§	}
+{ Ð´Ð¾Ð±Ð°Ð²Ñ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¸ ÐºÑŠÐ¼ Ð½Ð¸Ð·	}
 begin
 	if length(niz) < 2 then niz := ' ' + niz;
 	dob := niz;
 end; { dob }
 
 procedure izw_dni(mas : masiv; mes : word);
-{ ¨§¢¥¦¤  ¬ ±¨¢ ®² ¶¥«®·¨±«¥­¨ ±²®©­®±²¨ ¢ ¯®¤µ®¤¿¹ ¢¨¤	}
+{ Ð¸Ð·Ð²ÐµÐ¶Ð´Ð° Ð¼Ð°ÑÐ¸Ð² Ð¾Ñ‚ Ñ†ÐµÐ»Ð¾Ñ‡Ð¸ÑÐ»ÐµÐ½Ð¸ ÑÑ‚Ð¾Ð¹Ð½Ð¾ÑÑ‚Ð¸ Ð² Ð¿Ð¾Ð´Ñ…Ð¾Ð´ÑÑ‰ Ð²Ð¸Ð´	}
 begin
 	normvideo;
 	gotoxy(33, 5); write(mesi[mes],', ',godina);
-	gotoxy(16, 7); writeln('ÚÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÏ');
-	gotoxy(16, 8); writeln('Ó  ¯®­ Ó  ¢²  Ó  ±°  Ó  ·¥² Ó  ¯¥² Ó  ±º¡ Ó  ­¥¤ Ó');
-	gotoxy(16, 9); writeln('ÃÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÔ');
-	gotoxy(16,10);   write('Ó  ',mas[ 0],'     ',mas[ 1],'     ',mas[ 2],'     ',mas[ 3],'     ',mas[ 4],'   ');
+	gotoxy(16, 7); writeln('â”Œâ”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”');
+	gotoxy(16, 8); writeln('â”‚  Ð¿Ð¾Ð½ â”‚  Ð²Ñ‚  â”‚  ÑÑ€  â”‚  Ñ‡ÐµÑ‚ â”‚  Ð¿ÐµÑ‚ â”‚  ÑÑŠÐ± â”‚  Ð½ÐµÐ´ â”‚');
+	gotoxy(16, 9); writeln('â”œâ”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”¤');
+	gotoxy(16,10);   write('â”‚  ',mas[ 0],'     ',mas[ 1],'     ',mas[ 2],'     ',mas[ 3],'     ',mas[ 4],'   ');
 	gotoxy(52,10);   textcolor(red);
-                   write('  ',mas[ 5],'     ',mas[ 6],'  '); normvideo; write('Ó');
-	gotoxy(16,11);   write('Ó  ',mas[ 7],'     ',mas[ 8],'     ',mas[ 9],'     ',mas[10],'     ',mas[11],'   ');
+                   write('    ',mas[ 5],'     ',mas[ 6],'  '); normvideo; write('â”‚');
+	gotoxy(16,11);   write('â”‚  ',mas[ 7],'     ',mas[ 8],'     ',mas[ 9],'     ',mas[10],'     ',mas[11],'   ');
 	gotoxy(52,11);   textcolor(red);
-                   write('  ',mas[12],'     ',mas[13],'  '); normvideo; write('Ó');
-	gotoxy(16,12);   write('Ó  ',mas[14],'     ',mas[15],'     ',mas[16],'     ',mas[17],'     ',mas[18],'   ');
+                   write('    ',mas[12],'     ',mas[13],'  '); normvideo; write('â”‚');
+	gotoxy(16,12);   write('â”‚  ',mas[14],'     ',mas[15],'     ',mas[16],'     ',mas[17],'     ',mas[18],'   ');
 	gotoxy(52,12);   textcolor(red);
-                   write('  ',mas[19],'     ',mas[20],'  '); normvideo; write('Ó');
-	gotoxy(16,13);   write('Ó  ',mas[21],'     ',mas[22],'     ',mas[23],'     ',mas[24],'     ',mas[25],'   ');
+                   write('    ',mas[19],'     ',mas[20],'  '); normvideo; write('â”‚');
+	gotoxy(16,13);   write('â”‚  ',mas[21],'     ',mas[22],'     ',mas[23],'     ',mas[24],'     ',mas[25],'   ');
 	gotoxy(52,13);   textcolor(red);
-                   write('  ',mas[26],'     ',mas[27],'  '); normvideo; write('Ó');
-	gotoxy(16,14);   write('Ó  ',mas[28],'     ',mas[29],'     ',mas[30],'     ',mas[31],'     ',mas[32],'   ');
+                   write('    ',mas[26],'     ',mas[27],'  '); normvideo; write('â”‚');
+	gotoxy(16,14);   write('â”‚  ',mas[28],'     ',mas[29],'     ',mas[30],'     ',mas[31],'     ',mas[32],'   ');
 	gotoxy(52,14);   textcolor(red);
-                   write('  ',mas[33],'     ',mas[34],'  '); normvideo; write('Ó');
-	gotoxy(16,15); writeln('Ó  ',mas[35],'     ',mas[36],'                                     Ó');
-	gotoxy(16,16); writeln('ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ');
+                   write('    ',mas[33],'     ',mas[34],'  '); normvideo; write('â”‚');
+	gotoxy(16,15); writeln('â”‚  ',mas[35],'     ',mas[36],'                                     â”‚');
+	gotoxy(16,16); writeln('â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜');
 	textcolor(blue);
-	gotoxy(5,23);  writeln('ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÏ');
-	gotoxy(5,24);  writeln('Ó Backspace - ¯°¥¤¨¸¥­ ¬¥±¥¶ Ó Enter - ±«¥¤¢ ¹ ¬¥±¥¶ Ó Esc - ¯°¥ªº±¢ ­¥ Ó');
-	gotoxy(5,25);  writeln('ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ');
+	gotoxy(5,23);  writeln('â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”');
+	gotoxy(5,24);  writeln('â”‚ Backspace - Ð¿Ñ€ÐµÐ´Ð¸ÑˆÐµÐ½ Ð¼ÐµÑÐµÑ† â”‚ Enter - ÑÐ»ÐµÐ´Ð²Ð°Ñ‰ Ð¼ÐµÑÐµÑ† â”‚ Esc - Ð¿Ñ€ÐµÐºÑŠÑÐ²Ð°Ð½Ðµ â”‚');
+	gotoxy(5,25);  writeln('â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜');
 	normvideo;
 end; { izw_dni }
 
 function kal(mes, god : word):integer;
-{ ´³­ª¶¨¿, ª®¿²¨ ¢°º¹  ¡°®¿ ¤­¨ ­  ¬¥±¥¶ 				}
-{ ¢µ®¤  : ¬¥±¥¶ [1..12]									}
-{ ¨§µ®¤ : ¶¿«® ·¨±«® ¤ ¢ ¹® ¡°®¿ ¤­¨ ­  ¬¥±¥¶  [28..31]	}
+{ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ, ÐºÐ¾ÑÑ‚Ð¸ Ð²Ñ€ÑŠÑ‰Ð° Ð±Ñ€Ð¾Ñ Ð´Ð½Ð¸ Ð½Ð° Ð¼ÐµÑÐµÑ†Ð°				}
+{ Ð²Ñ…Ð¾Ð´  : Ð¼ÐµÑÐµÑ† [1..12]									}
+{ Ð¸Ð·Ñ…Ð¾Ð´ : Ñ†ÑÐ»Ð¾ Ñ‡Ð¸ÑÐ»Ð¾ Ð´Ð°Ð²Ð°Ñ‰Ð¾ Ð±Ñ€Ð¾Ñ Ð´Ð½Ð¸ Ð½Ð° Ð¼ÐµÑÐµÑ†Ð° [28..31]	}
 begin
 	case mes of
 		1 : kal := 31;
@@ -139,7 +139,7 @@ begin
 end; { kal }
 
 procedure izw_mesec(min,max : integer);
-{ ¨§¢¥¦¤  ¬¥±¥¶¨²¥ ¢ ¨­²¥°¢ «  min .. max	}
+{ Ð¸Ð·Ð²ÐµÐ¶Ð´Ð° Ð¼ÐµÑÐµÑ†Ð¸Ñ‚Ðµ Ð² Ð¸Ð½Ñ‚ÐµÑ€Ð²Ð°Ð»Ð° min .. max	}
 var
 	m,i,p,q,t : integer;
 begin
@@ -182,9 +182,9 @@ begin
 					if not (godina > 0) then ceti_god;
 					repeat
 						clrscr;
-						gotoxy(25,12); write('Ž² ¬¥±¥¶ : ');
+						gotoxy(25,12); write('ÐžÑ‚ Ð¼ÐµÑÐµÑ† : ');
 						readln(min);
-						gotoxy(25,13); write('„® ¬¥±¥¶ : ');
+						gotoxy(25,13); write('Ð”Ð¾ Ð¼ÐµÑÐµÑ† : ');
 						readln(max);
 					until ((min >= 1) and (min <= 12)) and ((max >= min) and (max <= 12));
 					izw_mesec(min,max);
@@ -193,28 +193,28 @@ begin
 					if not (godina > 0) then ceti_god;
 					clrscr;
 					if leapyear(godina) then
-					  vr_niz := 'ƒ®¤¨­ ²  ' + inttostr(godina) + ' ¥ ¢¨±®ª®±­ '
+					  vr_niz := 'Ð“Ð¾Ð´Ð¸Ð½Ð°Ñ‚Ð° ' + inttostr(godina) + ' Ðµ Ð²Ð¸ÑÐ¾ÐºÐ¾ÑÐ½Ð°'
 					else
-					  vr_niz := 'ƒ®¤¨­ ²  ' + inttostr(godina) + ' ­¥ ¥ ¢¨±®ª®±­ ';
+					  vr_niz := 'Ð“Ð¾Ð´Ð¸Ð½Ð°Ñ‚Ð° ' + inttostr(godina) + ' Ð½Ðµ Ðµ Ð²Ð¸ÑÐ¾ÐºÐ¾ÑÐ½Ð°';
 					gotoxy((trunc(80 - length(vr_niz)) div 2),13); write(vr_niz);
 					readln;
 					vr_niz := '';
 				 end; { case #52 }
 			53 : begin
 					clrscr;
-					gotoxy(19,9); writeln('Œ®«¿, ¢º¢¥¤¥²¥ ­¥®¡µ®¤¨¬ ²  ¨­´®°¬ ¶¨¿ ...');
+					gotoxy(19,9); writeln('ÐœÐ¾Ð»Ñ, Ð²ÑŠÐ²ÐµÐ´ÐµÑ‚Ðµ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð°Ñ‚Ð° Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ ...');
 					repeat
-						gotoxy(26,11); write('ƒ®¤¨­  [1583 .. 4903] : ');
+						gotoxy(26,11); write('Ð“Ð¾Ð´Ð¸Ð½Ð° [1583 .. 4903] : ');
 						clreol;
 						readln(godina);
 					until (godina >= 1583) and (godina <= 4903);
 					repeat
-						gotoxy(26,12); write('Œ¥±¥¶  [   1 ..   12] : ');
+						gotoxy(26,12); write('ÐœÐµÑÐµÑ†  [   1 ..   12] : ');
 						clreol;
 						readln(mes);
 					until (mes >= 1) and (mes <= 12);
 					repeat
-						gotoxy(26,13); write('„¥­    [   1 ..   ',kal(mes,godina),'] : ');
+						gotoxy(26,13); write('Ð”ÐµÐ½    [   1 ..   ',kal(mes,godina),'] : ');
 						clreol;
 						readln(den);
 					until (den >= 1) and (den <= kal(mes,godina));
@@ -227,29 +227,29 @@ begin
 			54 : begin
 					clrscr;
 					gotoxy(20,12);
-					write('ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ');
+					write('â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€');
 					gotoxy(20,13);
-					write('  ‚¥«¨ª¤¥­ ¯°¥§ ',godina,' £®¤¨­  ¥ ­  ',easterday(godina));
+					write('  Ð’ÐµÐ»Ð¸ÐºÐ´ÐµÐ½ Ð¿Ñ€ÐµÐ· ',godina,' Ð³Ð¾Ð´Ð¸Ð½Ð° Ðµ Ð½Ð° ',easterday(godina));
 					gotoxy(20,14);
-					write('ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ');
+					write('â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€');
 					gotoxy(21,20);
 					textcolor(red);
-					write('°®¨§¢«¥­ ª« ¢¨¸ §  ¢°º¹ ­¥ ¢ £«. ¬¥­¾ ... ');
+					write('ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð»ÐµÐ½ ÐºÐ»Ð°Ð²Ð¸Ñˆ Ð·Ð° Ð²Ñ€ÑŠÑ‰Ð°Ð½Ðµ Ð² Ð³Ð». Ð¼ÐµÐ½ÑŽ ... ');
 					while not keypressed do ;
 					normvideo;
 				 end;
 			55 : begin
 					clrscr;
-					gotoxy(15,10); writeln('ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÏ');
-					gotoxy(15,11); writeln('Ó            ƒ¥®°£¨ „¨¬¨²°®¢ ‘®²¨°®¢           Ó');
-					gotoxy(15,12); writeln('Ó----------------------------------------------Ó');
-					gotoxy(15,13); writeln('Ó ’¥«.   : +359 88 371 817                     Ó');
-					gotoxy(15,14); writeln('Ó …-¯®¹  : sotirov@bitex.com                   Ó');
-					gotoxy(15,15); writeln('Ó WWW    : http://web.orbitel.bg/sotirov       Ó');
-					gotoxy(15,16); writeln('Ó FTP    : ftp://free.techno-link.com/astronom Ó');
-					gotoxy(15,17); writeln('ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ');
+					gotoxy(15,10); writeln('â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”');
+					gotoxy(15,11); writeln('â”‚            Ð“ÐµÐ¾Ñ€Ð³Ð¸ Ð”Ð¸Ð¼Ð¸Ñ‚Ñ€Ð¾Ð² Ð¡Ð¾Ñ‚Ð¸Ñ€Ð¾Ð²           â”‚');
+					gotoxy(15,12); writeln('â”‚----------------------------------------------â”‚');
+					gotoxy(15,13); writeln('â”‚ Ð¢ÐµÐ».   : +359 88 371 817                     â”‚');
+					gotoxy(15,14); writeln('â”‚ Ð•-Ð¿Ð¾Ñ‰Ð° : sotirov@bitex.com                   â”‚');
+					gotoxy(15,15); writeln('â”‚ WWW    : http://web.orbitel.bg/sotirov       â”‚');
+					gotoxy(15,16); writeln('â”‚ FTP    : ftp://free.techno-link.com/astronom â”‚');
+					gotoxy(15,17); writeln('â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜');
 					gotoxy(21,20); textcolor(red);
-					write('°®¨§¢«¥­ ª« ¢¨¸ §  ¢°º¹ ­¥ ¢ £«. ¬¥­¾ ... ');
+					write('ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð»ÐµÐ½ ÐºÐ»Ð°Ð²Ð¸Ñˆ Ð·Ð° Ð²Ñ€ÑŠÑ‰Ð°Ð½Ðµ Ð² Ð³Ð». Ð¼ÐµÐ½ÑŽ ... ');
 					while not keypressed do ;
 					normvideo;
 				 end;
@@ -262,3 +262,4 @@ begin
 	until izb = 27;
 	clrscr;
 end. { kalendar }
+
