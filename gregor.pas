@@ -1,15 +1,15 @@
 unit gregor;
-{ +-----------------------------------------------------+
-  | Mодул, с функции за работа с Грегорианския календар |
-  +-----------------------------------------------------+
-  | Файл   : gregor.pas   | Автор : Георги Д. Сотиров   |
-  | Версия : 1.2          |         astronom@dir.bg     |
-  +-----------------------+-----------------------------+
-  | Използване : Модулът може да бъде използван за раз- |
-  |              работване на DOS програми на езика     |
-  |              Pascal, като за правилната им работа   |
-  |              е необходим кириличен драйвер.         |
-  +-----------------------------------------------------+}
+{ +------------------------------------------------------+
+  | Unit with functions for work with Gregorian calendar |
+  +------------------------------------------------------+
+  | File    : gregor.pas  | Author: Georgi D. Sotirov    |
+  | Version : 1.2         |         astronom@dir.bg      |
+  +-----------------------+------------------------------+
+  | Usage : The module could be used for development of  |
+  |         DOS programs on Pascal language, but for     |
+  |         they correct work Cyrillic driver is         |
+  |         necessary.                                   |
+  +------------------------------------------------------+}
 
 interface
 const
@@ -31,9 +31,9 @@ function inttostr(i : longint): string;
 
 implementation
 
-{ Transforms an integer to a string.                }
-{  Input  : a longint value                         }
-{  Output : a string representig the inputed value  }
+{ Transforms an integer to a string.                  }
+{  Input  : a longint value                           }
+{  Output : a string representing the inputted value  }
 function inttostr(i : longint): string;
 var
   s : string[11];
@@ -53,10 +53,10 @@ begin
 end;
 
 function day_of_week1(d, m, y : word): byte;
-{ Функция, която намира деня от седмицата по подадена дата : ден, месец,}
-{ година. Предполага се подаване на правилни данни !                    }
-{  вход  : ден, месец, година                                           }
-{  изход : число в интервала 0 - 6                                      }
+{ Function, which finds the day of the week by given date : day, month, }
+{ year. Passing correct data is supposed !                              }
+{  input  : day, month, year                                            }
+{  output : digit in the range 0 - 6                                    }
 var
   ta, tb, tc : longint;
 begin
@@ -74,7 +74,7 @@ begin
 end;
 
 function day_of_week2(d, m, y : word): byte;
-{ Същата като предходната, но с различен алгоритъм  }
+{ Same as previous, but using different algorithm }
 begin
   if m < 3 then
     begin
@@ -99,10 +99,10 @@ begin
 end;
 
 function day_of_year(d, m, y : word): word;
-{ Функция, която намира номера на деня в годината по зададена дата  }
-{  вход  : ден, месец, година                                       }
-{  изход : цяло число даващо номера на зададения календарен ден     }
-{          в годината                                               }
+{ Function, which finds the number of the day in the year by given date }
+{  input  : day, month, year                                            }
+{  output : integer giving the number of the given calendar day in      }
+{           the year                                                    }
 var
   den : real;
 begin
@@ -112,10 +112,10 @@ begin
 end;
 
 function easterday(y: yearT):string;
-{ Функция, която намира дата на Великден за дадена година. Функцията  }
-{ реализира алгоритъма на Гаус.                                       }
-{  вход  : годината, която се проверява                               }
-{  изход : низ, представящ датата на Великден за проверяваната година }
+{ Function, which finds the date of Easter for a given year. The function }
+{ implements Gauss's algorithm.                                           }
+{  input  : year, to check for                                            }
+{  output : string, representing the day of Easter for the year to check  }
 var
   n1, n2, n3, n4, n5, na, nb, nc, vel : integer;
 begin
@@ -126,8 +126,8 @@ begin
   n4 := na mod 30;
   nb := 2 * n2 + 4 * n3 + 6 * n4;
   n5 := nb mod 7;
-  nc := n4 + n5; { число в интервала 1 .. 35 }
-  { определяне на дата между 4 април и 8 май }
+  nc := n4 + n5; { digit in the range 1 .. 35 }
+  { determining the date between April 4-th и May 8-th }
   vel := nc + 3;
   if vel <= 30 then
     easterday := inttostr(vel) + ' април'
