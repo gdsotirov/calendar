@@ -12,7 +12,7 @@
 program Kalendar;
 
 uses
-  crt, dos, gregor;
+  crt, dos, gregor, sysutils;
 
 const
   mesi : array [1..12] of string[20] = ('Януари','Февруари','Март','Април',
@@ -256,7 +256,7 @@ begin
     else
       if izb <> 27 then
       begin
-        beep(888,50);
+        beep;
       end;
     end; { case }
   until izb = 27;
