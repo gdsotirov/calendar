@@ -117,27 +117,6 @@ begin
   normvideo;
 end; { izw_dni }
 
-function kal(mes, god : word):integer;
-{ Function, that returns number of days in month            }
-{ input  : month [1..12]                                    }
-{ output : integer giving number of days in month [28..31]  }
-begin
-  case mes of
-    1 : kal := 31;
-    2 : if leapyear(god) then kal := 29 else kal := 28;
-    3 : kal := 31;
-    4 : kal := 30;
-    5 : kal := 31;
-    6 : kal := 30;
-    7 : kal := 31;
-    8 : kal := 31;
-    9 : kal := 30;
-    10 : kal := 31;
-    11 : kal := 30;
-    12 : kal := 31;
-  end; { case }
-end; { kal }
-
 procedure izw_mesec(min,max : integer);
 { Prints months in the range min .. max }
 var
@@ -147,7 +126,7 @@ begin
   repeat
     clrscr;
     for i := 0 to 36 do mas[i] := '  ';
-    p := kal(m,godina);
+    p := days_in_month(m,godina);
     q := day_of_week1(1,m,godina);
     t := 0;
     for i := q to p + q - 1 do
@@ -214,10 +193,10 @@ begin
               readln(mes);
             until (mes >= 1) and (mes <= 12);
             repeat
-              gotoxy(26,13); write('Ден    [   1 ..   ',kal(mes,godina),'] : ');
+              gotoxy(26,13); write('Ден    [   1 ..   ',days_in_month(mes,godina),'] : ');
               clreol;
               readln(den);
-            until (den >= 1) and (den <= kal(mes,godina));
+            until (den >= 1) and (den <= days_in_month(mes,godina));
             vr_niz := inttostr(den) + '/' + mesi[mes] + '/' + inttostr(godina) + ' - ' +
             dowa[day_of_week2(den,mes,godina)];
             clrscr;
