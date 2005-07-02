@@ -3,7 +3,7 @@ unit gregor;
   | Unit with functions for work with Gregorian calendar |
   +------------------------------------------------------+
   | File    : gregor.pas  | Author: Georgi D. Sotirov    |
-  | Version : 1.2         |         astronom@dir.bg      |
+  | Version : 1.2         |         gdsotirov@dir.bg     |
   +-----------------------+------------------------------+
   | Usage : The module could be used for development of  |
   |         DOS programs on Pascal language, but for     |
