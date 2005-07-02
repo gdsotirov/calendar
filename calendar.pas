@@ -2,11 +2,11 @@
  |               ~  C   A   L   E   N   D   A  R    1.0  ~               |
  |               Author (c) 2000  George Dimitrov Sotirov                |
  +-----------------------------------------------------------------------+
- | Програмата реализира календар за всяка година в интервала 1582 - 4903 |
- | (Грегориански календар). Има възможности за извеждане на всеки месец  |
- | поотделно, проверка за високосна година, дата на Великден и др.       |
+ | The program implements calendar for each year in the range 1582-4903  |
+ | (Gregorian calendar). It has possibilities for printing each month    |
+ | separately, verification for leap year, date of Easter, etc.          |
  +-----------------------------------------------------------------------+
- | Реализация : 27. май. 2000 г., събота                                 |
+ | Implementation : Saturday, May 27-th 2000                             |
  +-----------------------------------------------------------------------+}
 
 program Kalendar;
@@ -30,7 +30,7 @@ var
   i : integer;
 
 procedure logo;
-{ извежда начален екран }
+{ Prints start screen }
 begin
   clrscr;
   gotoxy(20,6);  writeln('╔══════════════════════════════════════╗');
@@ -47,9 +47,9 @@ begin
 end; { logo }
 
 function menu: integer;
-{ показва менюто на програмата    }
-{ вход  : няма                    }
-{ изход : изборът на потребителя  }
+{ Displays program's menu }
+{ input  : none           }
+{ output : user's choice  }
 begin
   clrscr;
   gotoxy(20, 6); writeln('┌──────────────────────────────────────────┐');
@@ -68,7 +68,7 @@ begin
 end; { menu }
 
 procedure ceti_god;
-{ прочита годината въведена от потребителя  }
+{ Reads the year entered by user  }
 begin
   clrscr;
   repeat
@@ -79,14 +79,14 @@ begin
 end; { ceti_god }
 
 function dob(niz : string): string;
-{ добавя символи към низ  }
+{ Adds symbols to a string }
 begin
   if length(niz) < 2 then niz := ' ' + niz;
   dob := niz;
 end; { dob }
 
 procedure izw_dni(mas : masiv; mes : word);
-{ извежда масив от целочислени стойности в подходящ вид }
+{ Prints array of integers in appropriate way }
 begin
   normvideo;
   gotoxy(33, 5); write(mesi[mes],', ',godina);
@@ -118,9 +118,9 @@ begin
 end; { izw_dni }
 
 function kal(mes, god : word):integer;
-{ функция, която връща броя дни на месеца               }
-{ вход  : месец [1..12]                                 }
-{ изход : цяло число даващо броя дни на месеца [28..31] }
+{ Function, that returns number of days in month            }
+{ input  : month [1..12]                                    }
+{ output : integer giving number of days in month [28..31]  }
 begin
   case mes of
     1 : kal := 31;
@@ -139,7 +139,7 @@ begin
 end; { kal }
 
 procedure izw_mesec(min,max : integer);
-{ извежда месеците в интервала min .. max }
+{ Prints months in the range min .. max }
 var
   m,i,p,q,t : integer;
 begin
