@@ -143,7 +143,7 @@ begin
 end; { izw_mesec }
 
 begin
-  godina := 2000;
+  godina := CurrentYear;
   logo;
   repeat
     izb := menu;
