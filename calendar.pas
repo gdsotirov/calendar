@@ -222,8 +222,8 @@ begin
             gotoxy(15,11); writeln('│            Георги Димитров Сотиров           │');
             gotoxy(15,12); writeln('│----------------------------------------------│');
             gotoxy(15,13); writeln('│ Тел.   : +359 88 371 817                     │');
-            gotoxy(15,14); writeln('│ Е-поща : gdsotirov@dir.bg                    │');
-            gotoxy(15,15); writeln('│ WWW    : http://sotirov-bg.net/              │');
+            gotoxy(15,14); writeln('│ Е-поща : gdsotirov@gmail.com                 │');
+            gotoxy(15,15); writeln('│ WWW    : https://sotirov-bg.net/             │');
             gotoxy(15,16); writeln('│ FTP    : ftp://sotirov-bg.net/               │');
             gotoxy(15,17); writeln('└──────────────────────────────────────────────┘');
             gotoxy(21,20); textcolor(red);
